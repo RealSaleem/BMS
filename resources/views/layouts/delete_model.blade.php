@@ -1,6 +1,6 @@
 
 
----------------------------------------------User Delete Model------------
+<!-- ---------------------------------------------User Delete Model------------ -->
 
 <div class="modal" id="userDeleteModel">
   <div class="modal-dialog">

@@ -3,95 +3,75 @@
  $banquet = Auth::user()->banquet->first();
  @endphp
     
-
-  <header class="main-header-top hidden-print">
-         <a href="index.html" class="logo">
-         <!--  <img class="img-fluid able-logo" src="assets/images/logo.png" alt="Theme-logo"> -->
-         <b>{{ $banquet->name}}</b>
-        </a>
-         <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
-           
-            <!-- Navbar Right Menu-->
-            <div class="navbar-custom-menu">
-               <ul class="top-nav">
-                  <!--Notification Menu-->
-                  <li class="dropdown notification-menu">
-                     <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-                        <i class="icon-bell"></i>
-                        <span class="badge badge-danger header-badge">9</span>
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="not-head">You have <b class="text-primary">4</b> new notifications.</li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media">
-                              <span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
-                  </span>
-                              <div class="media-body"><span class="block">Lisa sent you a mail</span><span class="text-muted block-time">2min ago</span></div>
-                           </a>
-                        </li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media">
-                              <span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/avatar-2.png" alt="User Image">
-                  </span>
-                              <div class="media-body"><span class="block">Server Not Working</span><span class="text-muted block-time">20min ago</span></div>
-                           </a>
-                        </li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media"><span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/avatar-3.png" alt="User Image">
-                  </span>
-                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block-time">3 hours ago</span></div></a>
-                        </li>
-                        <li class="not-footer">
-                           <a href="#!">See all notifications.</a>
-                        </li>
-                     </ul>
-                  </li>
-   
-          
-                  <!-- User Menu-->
-                  <li class="dropdown">
-                     <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                        <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span>
-                        <span> <b>{{Auth::user()->name}}</b> <i class=" icofont icofont-simple-down"></i></span>
-
-                     </a>
-                     <ul class="dropdown-menu settings-menu">
-                        <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
-                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
-                        <li class="p-0">
-                           <div class="dropdown-divider m-0"></div>
-                        </li>
-                        <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
+ <header class="page-topbar" id="header">
+        <div class="navbar navbar-fixed">
+            <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light">
+                <div class="nav-wrapper">
+                    <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+                        <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Explore Materialize" data-search="template-list">
+                        <ul class="search-list collection display-none"></ul>
+                    </div>
+                    <ul class="navbar-list right">
+                        <li class="dropdown-language"><a class="waves-effect waves-block waves-light translation-button" href="#" data-target="translation-dropdown"><span class="flag-icon flag-icon-gb"></span></a></li>
+                        <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
+                        <li class="hide-on-large-only search-input-wrapper"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
+                        <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown"><i class="material-icons">notifications_none<small class="notification-badge">5</small></i></a></li>
+                        <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
+                        <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li>
+                    </ul>
+                    translation-button
+                    <ul class="dropdown-content" id="translation-dropdown">
+                        <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="en"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+                        <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a></li>
+                        <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></li>
+                        <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a></li>
+                    </ul>
+                    <!-- notifications-dropdown-->
+                    <ul class="dropdown-content" id="notifications-dropdown">
                         <li>
-
-                         <!--  <a href="login1.html"><i class="icon-logout"></i> Logout -->
-  <a  href="{{ route('logout') }}"
-                                             onclick="event.preventDefault();
-                                                           document.getElementById('logout-form').submit();">
-                                             <i class="icon-logout"></i> {{ __('Logout') }}
-                                          </a>
-
-                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                              @csrf
-                                          </form>
-
-
+                            <h6>NOTIFICATIONS<span class="new badge">5</span></h6>
                         </li>
-
-                     </ul>
-                  </li>
-               </ul>
-
-              
-            </div>
-         </nav>
-      </header>
+                        <li class="divider"></li>
+                        <li><a class="black-text" href="#!"><span class="material-icons icon-bg-circle cyan small">add_shopping_cart</span> A new order has been placed!</a>
+                            <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                        </li>
+                        <li><a class="black-text" href="#!"><span class="material-icons icon-bg-circle red small">stars</span> Completed the task</a>
+                            <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                        </li>
+                        <li><a class="black-text" href="#!"><span class="material-icons icon-bg-circle teal small">settings</span> Settings updated</a>
+                            <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                        </li>
+                        <li><a class="black-text" href="#!"><span class="material-icons icon-bg-circle deep-orange small">today</span> Director meeting started</a>
+                            <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                        </li>
+                        <li><a class="black-text" href="#!"><span class="material-icons icon-bg-circle amber small">trending_up</span> Generate monthly report</a>
+                            <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                        </li>
+                    </ul>
+                    <!-- profile-dropdown-->
+                    <ul class="dropdown-content" id="profile-dropdown">
+                        <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i class="material-icons">person_outline</i> Profile</a></li>
+                        <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i> Chat</a></li>
+                        <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i> Help</a></li>
+                        <li class="divider"></li>
+                        <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i class="material-icons">lock_outline</i> Lock</a></li>
+                        <li><a class="grey-text text-darken-1" href="user-login.html"><i class="material-icons">keyboard_tab</i> Logout</a></li>
+                    </ul>
+                </div>
+                <nav class="display-none search-sm">
+                    <div class="nav-wrapper">
+                        <form id="navbarForm">
+                            <div class="input-field search-input-sm">
+                                <input class="search-box-sm mb-0" type="search" required="" id="search" placeholder="Explore Materialize" data-search="template-list">
+                                <label class="label-icon" for="search"><i class="material-icons search-sm-icon">search</i></label><i class="material-icons search-sm-close">close</i>
+                                <ul class="search-list collection search-list-sm display-none"></ul>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </nav>
+        </div>
+    </header> 
 
 
 

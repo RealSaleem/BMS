@@ -1,194 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
 <head>
-	<title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="description" content="codedthemes">
-	<meta name="keywords"
-		  content=", Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-	<meta name="author" content="codedthemes">
-
-	<!-- Favicon icon -->
-	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-	<!-- Google font-->
-   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
-
-	<!-- Font Awesome -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-	<!--ico Fonts-->
-	<link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
-
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-
-	<!-- waves css -->
-	<link rel="stylesheet" type="text/css" href="assets/plugins/Waves/waves.min.css">
-
-	<!-- Style.css -->
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-
-	<!-- Responsive.css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-
-	<!--color css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color"/>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>User Login | Materialize - Material Design Admin Template</title>
+    <link rel="apple-touch-icon" href="app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- BEGIN: VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/vendors.min.css">
+    <!-- END: VENDOR CSS-->
+    <!-- BEGIN: Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-dark-menu-template/materialize.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/vertical-dark-menu-template/style.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/login.css">
+    <!-- END: Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/custom/custom.css">
+    <!-- END: Custom CSS-->
 </head>
-<body>
-<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
-	<!-- Container-fluid starts -->
-	<div class="container-fluid">
-		<div class="row">
+<!-- END: Head-->
 
-			<div class="col-sm-12">
-				<div class="login-card card-block">
-					 <form method="POST" action="{{ route('login') }}" >
-                        @csrf
-					<!-- 	<div class="text-center">
-							<img src="assets/images/logo-black.png" alt="logo">
-						</div> -->
-						
-						<div class="row">
-							<div class="col-md-12">
-								<div class="md-input-wrapper">
-								
-									
-
-
- <input id="email" type="email"  class="md-form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  required autocomplete="email" autofocus>
- <label>Email</label>
-                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
-
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="md-input-wrapper">
-								<!-- 	<input type="password" class="md-form-control" required="required"/>
-									 -->
+<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 1-column login-bg   blank-page blank-page" data-open="click" data-menu="vertical-dark-menu" data-col="1-column">
+    <div class="row">
+        <div class="col s12">
+            <div class="container">
+                <div id="login-page" class="row">
+                    <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+                        <form method="POST" action="{{ route('login') }}" >
+                            @csrf
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <h5 class="ml-4">Sign in</h5>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">person_outline</i>
+                                    <!-- <input id="username" type="text"> -->
+                                    <input id="email" type="email"  class="md-form-control @error('email') is-invalid @enderror" name="email" value=""  required autocomplete="email" autofocus>
+                                  
+                                                       @error('email')
+                                                                       <span class="invalid-feedback" role="alert">
+                                                                           <strong>{{ $message }}</strong>
+                                                                       </span>
+                                                       @enderror
 
 
-
-
-									 <input id="password" type="password"   class="md-form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-<label>Password</label>
+                                    <label for="email" class="center-align">Email</label>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">lock_outline</i>
+                                    <input id="password" type="password"   class="md-form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                      @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-								</div>
-							</div>
-							<div class="col-sm-6 col-xs-12">
-							<div class="rkmd-checkbox checkbox-rotate checkbox-ripple m-b-25">
-								<!-- <label class="input-checkbox checkbox-primary">
-									<input type="checkbox" id="checkbox">
-									<span class="checkbox"></span>
-								</label> -->
-								<!-- <div class="captions">Remember Me</div> -->
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                	<button type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">LOGIN</button>
+                                
+                                </div>
+                            </div>
+                            <div class="row">
+                               
+                                <div class="input-field col s6 m6 l6">
+                                    <p class="margin right-align medium-small"><a href="user-forgot-password.html">Forgot password ?</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="content-overlay"></div>
+        </div>
+    </div>
 
-							</div>
-								</div>
-							<div class="col-sm-6 col-xs-12 forgot-phone text-right">
-								<a href="forgot-password.html" class="text-right f-w-600"> Forget Password?</a>
-								</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-10 offset-xs-1">
-								<button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
-							</div>
-						</div>
-						<!-- <div class="card-footer"> -->
-					
-
-						<!-- </div> -->
-					</form>
-					<!-- end of form -->
-				</div>
-				<!-- end of login-card -->
-			</div>
-			<!-- end of col-sm-12 -->
-		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container-fluid -->
-</section>
-
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
-<div class="ie-warning">
-	<h1>Warning!!</h1>
-	<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-	<div class="iew-container">
-		<ul class="iew-download">
-			<li>
-				<a href="http://www.google.com/chrome/">
-					<img src="assets/images/browser/chrome.png" alt="Chrome">
-					<div>Chrome</div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.mozilla.org/en-US/firefox/new/">
-					<img src="assets/images/browser/firefox.png" alt="Firefox">
-					<div>Firefox</div>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.opera.com">
-					<img src="assets/images/browser/opera.png" alt="Opera">
-					<div>Opera</div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.apple.com/safari/">
-					<img src="assets/images/browser/safari.png" alt="Safari">
-					<div>Safari</div>
-				</a>
-			</li>
-			<li>
-				<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-					<img src="assets/images/browser/ie.png" alt="">
-					<div>IE (9 & above)</div>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-<!-- Warning Section Ends -->
-<!-- Required Jqurey -->
-<script src="assets/plugins/jquery/dist/jquery.min.js"></script>
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="assets/plugins/tether/dist/js/tether.min.js"></script>
-
-<!-- Required Fremwork -->
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- waves effects.js -->
-<script src="assets/plugins/Waves/waves.min.js"></script>
-<!-- Custom js -->
-<script type="text/javascript" src="assets/pages/elements.js"></script>
-
-
-
+    <!-- BEGIN VENDOR JS-->
+    <script src="app-assets/js/vendors.min.js"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN THEME  JS-->
+    <script src="app-assets/js/plugins.js"></script>
+    <script src="app-assets/js/search.js"></script>
+    <script src="app-assets/js/custom/custom-script.js"></script>
+    <!-- END THEME  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
 </body>
+
 </html>
