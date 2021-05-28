@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-      public function index()
+    public function index()
     {
     $users = User::all();
        return view('User.index')->with(compact('users'));
@@ -16,7 +17,15 @@ class UserController extends Controller
 
    public function create()
     {
-         return view('User.form');
+        $model =[
+            'route' => route('user.store'),
+            'is_edit' => false,
+            'title' => 'User Create',
+            'button' => 'Submit'
+        ];
+
+
+         return view('User.form')->with(compact('model'));
     }
 
     public function store(Request $request)
@@ -44,5 +53,4 @@ class UserController extends Controller
             return redirect()->back()->with('success','User Deleted Successfully');       
         
     }
-
 }

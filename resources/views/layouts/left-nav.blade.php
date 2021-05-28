@@ -1,6 +1,3 @@
- @php
- $banquet = Auth::user()->banquet->first();
- @endphp 
 
  <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
         <div class="brand-sidebar">
@@ -13,14 +10,25 @@
             <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice">Banquet Management</span></a>
                 <div class="collapsible-body">
                     <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                        <li><a href="{{route('booking.create')}}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Booking</span></a>
+                        <li><a href="{{route('booking.index')}}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Booking</span></a>
                         </li>
                        
                     </ul>
                 </div>
             </li>
 
-            <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice">User Management</span></a>
+         
+
+             <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice">{{_('Program Management')}}</span></a>
+                <div class="collapsible-body">
+                    <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                        <li><a href="{{route('program.index')}}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">{{_('Programs')}}</span></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </li>
+               <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice">User Management</span></a>
                 <div class="collapsible-body">
                     <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                         <li><a href="JavaScript:void(0)" class="collapsible-header waves-effect waves-cyan "><i class="material-icons">receipt</i><span class="menu-title" data-i18n="Invoice List">User</span></a>
@@ -30,14 +38,9 @@
                         <li><a href="{{route('role.index')}}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice List">Role</span></a></li>
                     
                     </ul>
-</div>
+                </div>
                     </li>
-                        <!-- <li><a href="app-invoice-view.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice View">Invoice View</span></a>
-                        </li>
-                        <li><a href="app-invoice-edit.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice Edit">Invoice Edit</span></a>
-                        </li>
-                        <li><a href="app-invoice-add.html"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Invoice Add">Invoice Add</span></a>
-                        </li> -->
+    
                     </ul>
                 </div>
             </li>

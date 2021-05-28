@@ -9,12 +9,16 @@
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
-    <title>Chat | Materialize - Material Design Admin Template</title>
+    @yield('title')
     <link rel="apple-touch-icon" href="../../../app-assets/images/favicon/apple-touch-icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/data-tables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/data-tables/css/select.dataTables.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/vertical-dark-menu-template/materialize.css">
@@ -134,9 +138,9 @@
         <div class="row">
             <div class="content-wrapper-before blue-grey lighten-5"></div>
             <div class="col s12">
-                <div class="container">
+                <div class="container" id="mainContainer" >
                   
-                    
+                   @yield('content')  
                     <!-- END RIGHT SIDEBAR NAV -->
                 </div>
                 <div class="content-overlay"></div>
@@ -144,7 +148,7 @@
         </div>
     </div>
     <!-- END: Page Main-->
-    @yield('content')
+   
     <!-- BEGIN: Footer-->
 
     <footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow">
@@ -156,6 +160,11 @@
     <!-- END: Footer-->
     <!-- BEGIN VENDOR JS-->
     <script src="../../../app-assets/js/vendors.min.js"></script>
+     <script src="../../../app-assets/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="../../../app-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../../app-assets/vendors/data-tables/js/dataTables.select.min.js"></script>
+     <script src="../../../app-assets/js/scripts/data-tables.js"></script>
+
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <!-- END PAGE VENDOR JS-->

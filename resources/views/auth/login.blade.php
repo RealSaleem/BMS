@@ -40,12 +40,13 @@
                                     <h5 class="ml-4">Sign in</h5>
                                 </div>
                             </div>
+{{--                            @dd(Hash::make('12345'))--}}
                             <div class="row margin">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix pt-2">person_outline</i>
                                     <!-- <input id="username" type="text"> -->
                                     <input id="email" type="email"  class="md-form-control @error('email') is-invalid @enderror" name="email" value=""  required autocomplete="email" autofocus>
-                                  
+
                                                        @error('email')
                                                                        <span class="invalid-feedback" role="alert">
                                                                            <strong>{{ $message }}</strong>
@@ -68,15 +69,15 @@
                                     <label for="password">Password</label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                 	<button type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">LOGIN</button>
-                                
+
                                 </div>
                             </div>
                             <div class="row">
-                               
+
                                 <div class="input-field col s6 m6 l6">
                                     <p class="margin right-align medium-small"><a href="user-forgot-password.html">Forgot password ?</a></p>
                                 </div>

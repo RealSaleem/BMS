@@ -1,54 +1,150 @@
 @extends('layouts.app')
+
+@section('title')
+    <title>BMS | {{ $model['title'] }}</title>
+
+@endsection
 @section('content')
 
-<style type="text/css">
-	.userform{
-		 margin: auto;
-  width: 100%;
-  padding: 10px;
-	}
 
-</style>
+    <style type="text/css">
+        mainContainer. {
+            margin-top: 6%;
+        }
+
+    </style>
 
 
-			<form method="post" action="{{route('user.store')}}">
-				@csrf
- 				<div class="col-lg-10 userform">
-                     <div class="card">
-                        <div class="card-header">
-                           <h5 class="card-header-text">Add User</h5>
-                           <div class="card-block">
-	 							<div class="row">
-	                                 <div class="form-group col-md-6">
-	                                    <input class="form-control" placeholder="User Name" type="text" name="name" value="{{old('name')}}" id="example-text-input">
-	                                 </div>
-	                                 <div class="form-group col-md-6">
-	                                    <input class="form-control" name="email" type="email" placeholder="User Email" value="{{old('email')}}" id="example-text-input">
-	                                 </div>
-	                            </div>
-                            	<div class=" row">
-	                            		 <div class="form-group col-md-4">
-	                                  <select name="role" class="form-control"> 
-	                                  <option value="1">admin</option>
-	                                  </select>
-	                                 </div>
-	                                 <div class="form-group col-md-4">
-	                                    <input class="form-control" placeholder="Password" type="password" name="password" value="{{old('password')}}" id="example-text-input">
-	                                 </div>
-	                                 <div class="form-group col-md-4">
-	                                    <input class="form-control" name="confirm_password" type="password" placeholder="Confirm Password" value="{{old('confirm_password')}}" id="example-text-input">
-	                                 </div>
 
-                            		</div>
-                        		</div>
-                          </div>
-                           <div class="card-footer">
-                           	<span style="float: right;">  <button type="Submit"  class="btn btn-primary waves-effect waves-light text-right">Submit </button></span>
-                           </div>
-                      </div>
-                 </div>
-			</form>
+    <div class="container" style="    width: 86%;">
+        <div class="card">
+            <div class="row">
+				<div class="input-field col s6  ">
+<label style="font-size: 33px; font-weight: 600; padding: 2px 25px; margin-top: -19px;">{{_('Users')}}</label>
 
+
+                </div>
+
+                <div class="input-field col s6  ">
+
+                    <a href="{{ route('user.index') }}" class="btn-floating" style="float: right;margin-right: 11px;">
+                        <i class="material-icons">arrow_back</i>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="container" style="width: 86%; padding: 38px 16px;">
+                <div class="card-body login-card-body">
+                    <form method="post" action="{{ $model['route'] }}">
+                        @csrf
+						@if( $model['is_edit']== true )
+						<input type="hidden" name="id" value="">
+						@endif
+                        <div class="row">
+                            <div class="input-field">
+                                <input type="text" name="name" value="{{ old('name') }}" class="form-control">
+                                <label for="From">User Name : </label>
+
+                                @if ($errors->has('name'))
+                                    <small class="errorTxt">
+                                        <div class="error mt-1">{{ $errors->first('name') }}</div>
+                                    </small>
+                                @endif
+                            </div>
+
+
+                            <div class="input-field">
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control">
+                                <label for="From">User Email : </label>
+
+                                @if ($errors->has('email'))
+                                    <small class="errorTxt">
+                                        <div class="error mt-1">{{ $errors->first('email') }}</div>
+                                    </small>
+                                @endif
+                            </div>
+
+
+
+                            <div class="input-field">
+                                <select name="role" class="form-control">
+                                    <option value="1">admin</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" value="{{ old('password') }}" class="form-control">
+                            <label for="From">Password : </label>
+
+                            @if ($errors->has('password'))
+                                <small class="errorTxt">
+                                    <div class="error mt-1">{{ $errors->first('password') }}</div>
+                                </small>
+                            @endif
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="confirm_password" value="{{ old('confirm_password') }}"
+                                class="form-control">
+                            <label for="From">Confirm Password : </label>
+
+                            @if ($errors->has('confirm_password'))
+                                <small class="errorTxt">
+                                    <div class="error mt-1">{{ $errors->first('confirm_password') }}</div>
+                                </small>
+                            @endif
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<div class="file-field input-field">
+							<div class="btn">
+							  <span>File</span>
+							  <input type="file">
+							</div>
+							<div class="file-path-wrapper">
+							  <input class="file-path validate" type="text">
+							</div>
+						  </div>
+
+
+                        <div class="row">
+
+                    
+                            <div class="input-field col s12  ">
+
+
+
+                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action"
+                                    style="float: right"> {{ $model['button'] }}
+                                    <i class="material-icons right">send</i>
+
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 @endsection
