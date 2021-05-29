@@ -88,7 +88,7 @@
 		
                                          
                                           <div class="tab-pane" id="permission" role="tabpanel">
-                       <form method="post" action="{{route('permission.store')}}">
+                       <form method="post" action="{{route('store_permission')}}">
 				@csrf
                         <div class="card-header">
                            <h5 class="card-header-text">Add Permission</h5>

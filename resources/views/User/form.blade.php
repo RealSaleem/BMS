@@ -14,7 +14,7 @@
 
     </style>
 
-
+{{-- @dd($model['user']['name']) --}}
 
     <div class="container" style="    width: 86%;">
         <div class="card">
@@ -40,11 +40,12 @@
                     <form method="post" action="{{ $model['route'] }}">
                         @csrf
 						@if( $model['is_edit']== true )
-						<input type="hidden" name="id" value="">
+						<input type="hidden" name="id" value="{{isset($model['user']['id']) ? $model['user']['id'] : null}}">
 						@endif
+
                         <div class="row">
                             <div class="input-field">
-                                <input type="text" name="name" value="{{ old('name') }}" class="form-control">
+                                <input type="text" name="name" value="{{isset($model['user']['name']) ? $model['user']['name'] : null }}" class="form-control">
                                 <label for="From">User Name : </label>
 
                                 @if ($errors->has('name'))
@@ -56,7 +57,7 @@
 
 
                             <div class="input-field">
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control">
+                                <input type="email" name="email" value="{{ isset($model['user']['email']) ? $model['user']['email'] : null }}" class="form-control">
                                 <label for="From">User Email : </label>
 
                                 @if ($errors->has('email'))
@@ -65,12 +66,16 @@
                                     </small>
                                 @endif
                             </div>
-
+@php
+$user    =    isset($model['user']['role_id']) ? $model['user']['role_id'] : null;
+$active  =    isset($model['user']['role_id']) ? '' : 'disable';    
+@endphp
 
 
                             <div class="input-field">
                                 <select name="role" class="form-control">
-                                    <option value="1">admin</option>
+                                 @if($active == 'enable') <option value="1" $active>{{$user}}</option> @endif
+                                    <option value="1" >admin</option>
                                 </select>
                             </div>
 

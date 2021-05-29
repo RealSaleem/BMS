@@ -1,40 +1,47 @@
 @extends('layouts.app')
 @section('content')
+@section('title')
+    <title>BMS | Dashboard</title>
+@endsection
 
-<style type="text/css">
-	
-	.tooltip-icon .btn-icon{
-		    margin-right: 4px;
-    margin-left: 17px;
-    margin-top: 7px;
-	}
-</style>
-
-   <div class="col-lg-12">
-                     <div class="card">
-                   
-                        <div class="card-block tooltip-icon button-list">
-                        	<label>
-                        		<button type="button" class="btn btn-primary btn-icon waves-effect waves-light"   >
-                                    <i class="icofont icofont-home"></i>
-                             </button>Barat
-                        	</label>
-                           
-                               
-                           <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="top" title=".icofont icofont-search-alt-2">
-                                    <i class="icofont icofont-search-alt-2"></i>
-                                </button>
-                           <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="right" title=".icofont-refresh">
-                                    <i class="icofont icofont-refresh"></i>
-                                </button>
-                           <button type="button" class="btn btn-info btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="top" title=".icofont-print">
-                                    <i class="icofont icofont-print"></i>
-                                </button>
-                           <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title=".icofont-paper-plane">
-                                    <i class="icofont icofont-paper-plane"></i>
-                                </button>
-                        </div>
-                     </div>
-                     <!-- end of card -->
-                  </div>
+<div id="ecommerce-offer">
+    <div class="row">
+        <div class="col s12 m3">
+            <div class="card gradient-shadow gradient-45deg-light-blue-cyan border-radius-3 animate fadeUp">
+                <div class="card-content center">
+                    <img src="../../../app-assets/images/icon/apple-watch.png" class="width-40 border-round z-depth-5 responsive-img" alt="image" />
+                    <h5 class="white-text lighten-4">50% Off</h5>
+                    <p class="white-text lighten-4">On apple watch</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3">
+            <div class="card gradient-shadow gradient-45deg-red-pink border-radius-3 animate fadeUp">
+                <div class="card-content center">
+                    <img src="../../../app-assets/images/icon/printer.png" class="width-40 border-round z-depth-5 responsive-img" alt="images" />
+                    <h5 class="white-text lighten-4">20% Off</h5>
+                    <p class="white-text lighten-4">On Canon Printer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3">
+            <div class="card gradient-shadow gradient-45deg-amber-amber border-radius-3 animate fadeUp">
+                <div class="card-content center">
+                    <img src="../../../app-assets/images/icon/laptop.png" class="width-40 border-round z-depth-5 responsive-img" alt="image" />
+                    <h5 class="white-text lighten-4">40% Off</h5>
+                    <p class="white-text lighten-4">On apple macbook</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3">
+            <div class="card gradient-shadow gradient-45deg-green-teal border-radius-3 animate fadeUp">
+                <div class="card-content center">
+                    <img src="../../../app-assets/images/icon/bowling.png" class="width-40 border-round z-depth-5 responsive-img" alt="image" />
+                    <h5 class="white-text lighten-4">60% Off</h5>
+                    <p class="white-text lighten-4">On any game</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

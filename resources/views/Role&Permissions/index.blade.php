@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>BMS | User</title>
+    <title>BMS | Role </title>
 @endsection
 
 @section('content')
@@ -48,43 +48,29 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach ($users as $user)
+                                    @foreach ($roles as $role)
                                         <tr>
-                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $role->id }}</td>
 
+                                           
+
+                                            <td>{{ $role->name }}</td>
+                                        
                                             <td>
-                                                @if ($user->image != null && $user->image != '')
-                                                    <span><img class="img-circle " src="{{ $user->image }}"
-                                                            style="width:40px;" alt="User Image"></span>
-                                                @else
-                                                    <span><img class="img-circle " src="assets/images/avatar-1.png"
-                                                            style="width:40px;" alt="User Image"></span>
-                                                @endif
-
-                                            </td>
-
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>
-												<div class="switch">
-													<label>
-													  <input type="checkbox"  {{ $user->is_active && $user->is_active != 1  ? '' : 'checked'  }} >
-													  <span class="lever"></span>
-													</label>
-												  </div>
+											
                                                
 
                                             </td>
                                             <td>
 
-                                                <a href="{{url('user/edit/'.$user->id)}}">
+                                                <a href="{{url('role/edit/'.$user->id)}}">
 													<i class="material-icons">create</i>
                                                 </a>&nbsp;&nbsp;
 												
 
 
                                                 <!--  <a href="#" style="color: red;" data-toggle="modal" data-target="#user_delete"> -->
-                                                <a href="{{url('user/delete/'.$user->id)}}" style="color: red;" data-id="{{ $user->id }}"  
+                                                <a href="{{url('role/delete/'.$user->id)}}" style="color: red;" data-id="{{ $user->id }}"  
                                                  >
 													<i class="material-icons">remove_circle</i>
                                                 </a>

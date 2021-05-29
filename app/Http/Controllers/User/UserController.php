@@ -46,6 +46,44 @@ class UserController extends Controller
      return redirect()->route('user.index')->with('success','User Created Successfully');  
     }
 
+    public function edit($id)
+    {
+     
+            $user = User::find($id);
+            $model =[
+                'route' => route('user.update'),
+                'user' => $user,
+                'is_edit' => true,
+                'title' => 'User Update',
+                'button' => 'Update'
+            ];
+
+            return view('User.form')->with(compact('model'));     
+        
+    }
+
+    public function update(Request $request)
+    {
+            $user = User::find($request->id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            if($request->role){
+                $user->role_id = $request->role;
+                // $user->assignRole($request->role);
+           }
+           if($request->password){
+            $user->password =  Hash::make($request->password);
+            }
+            if($request->image){
+                 $user->image = $request->image;
+            }
+            $user->is_active = true;
+            $user->is_owner = false;
+            $user->save();
+            return redirect()->route('user.index')->with('success','User Updated Successfully');       
+        
+    }
+
         public function destroy(Request $request)
     {
             $user = User::find($request->id);

@@ -17,7 +17,7 @@ class RoleController extends Controller
     {
        $roles = Role::all();
 
-         return view('User.role_index')->with(compact('roles'));
+         return view('User.index')->with(compact('roles'));
     }
 
     /**
@@ -28,7 +28,7 @@ class RoleController extends Controller
     public function create()
     {
          $permissions = Permission::all();
-         return view('User.role_form')->with(compact('permissions'));
+         return view('User.form')->with(compact('permissions'));
     }
 
     /**
